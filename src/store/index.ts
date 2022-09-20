@@ -1,8 +1,15 @@
 import { createStore } from 'vuex';
+import user, { userProps } from './user';
+import global, { GlobalStatus } from './global';
+export interface GlobalDataProps {
+  user: userProps;
+  global: GlobalStatus;
+}
 
-export default createStore({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+const store = createStore({
+  modules: {
+    user,
+    global,
+  },
 });
+export default store;
